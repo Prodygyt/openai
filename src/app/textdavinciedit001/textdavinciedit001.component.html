@@ -1,0 +1,17 @@
+<div>
+
+  <Head>
+    <title>OpenAI Quickstart</title>
+    <link rel="icon" href="/dog.png" />
+  </Head>
+  <main className="main">
+    <h3>Edit my text</h3>
+    <form>
+      <input type="text" placeholder="Enter the document to edit" [(ngModel)]="input" />
+      <input type="text" placeholder="What should I do?" [(ngModel)]="instruction" />
+      <input type="button" value="Generate correction" (click)="postCompletition()" />
+    </form>
+    <div className="result"> {{result}} </div>
+  </main>
+
+</div>

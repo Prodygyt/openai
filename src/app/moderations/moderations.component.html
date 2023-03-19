@@ -1,0 +1,16 @@
+<div>
+
+  <Head>
+    <title>OpenAI Quickstart</title>
+    <link rel="icon" href="/dog.png" />
+  </Head>
+  <main className="main">
+    <h3>Moderate text</h3>
+    <form>
+      <input type="text" name="animal" placeholder="Make a polemic declaration" [(ngModel)]="request" />
+      <input type="button" value="Generate moderation" (click)="postCompletition()" />
+    </form>
+    <div className="result"> {{result}} </div>
+  </main>
+
+</div>
