@@ -5,6 +5,8 @@ import { retry, catchError } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs/';
 import { UrlHandlingStrategy } from '@angular/router';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +18,7 @@ export class Textdavinciedit001Service {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer <your-key>',
+      'Authorization': 'Bearer ' + process.env['NG_APP_KEY'],
     })
   }
 
@@ -36,6 +38,7 @@ export class Textdavinciedit001Service {
     } else {
       // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+
     }
     window.alert(errorMessage);
     return throwError(errorMessage);

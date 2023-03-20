@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import * as dotenv from 'dotenv';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class ImagesgenerationService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer <your-key>',
+      'Authorization': 'Bearer ' + process.env['NG_APP_KEY'],
     })
   }
 
